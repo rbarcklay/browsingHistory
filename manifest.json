@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+
+  "name": "Opera Extensions — Getting Started",
+  "description": "Sample extension for the “Making your first extension” article",
+  "version": "1.0",
+  "content_security_policy": "script-src 'self' https://cdn.firebase.com https://*.firebaseio.com; object-src 'self'",
+
+  "background": {
+    "scripts": ["firebase.js", "jquery.js", "background.js"]
+  },
+  "permissions": ["tabs", "history"],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "browsing data",
+    "default_popup": "popup.html"
+  }
+}
