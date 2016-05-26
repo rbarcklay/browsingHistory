@@ -15,6 +15,8 @@ chrome.tabs.onActivated.addListener(function(info) {
     console.log("time1: " + Date.now());
     switchTime = Date.now();
 
+    /*hi*/
+
 
     chrome.tabs.get(info.tabId, function(tab) {
         chrome.history.getVisits({
@@ -41,6 +43,8 @@ chrome.tabs.onActivated.addListener(function(info) {
 
             dataRef.on("value", function(snapshot) {
                 console.log(snapshot.val());
+                //console.log("child");
+                //console.log(snapshot.child(lastSite).valueOf());
 
                 if(snapshot.child(lastSite).exists()){ //method?
                     sitesRef.update(lastSite);
