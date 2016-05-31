@@ -15,10 +15,7 @@ chrome.tabs.onActivated.addListener(function(info) {
     console.log("time1: " + Date.now());
     switchTime = Date.now();
 
-    /*hi*/
-
-
-    chrome.tabs.get(info.tabId, function(tab) {
+    chrome.tabs.get(info.tabId, function(tab) { //do I want visit times??
         chrome.history.getVisits({
             'url': tab.url
         }, function (visits) {
@@ -41,10 +38,8 @@ chrome.tabs.onActivated.addListener(function(info) {
                 tab.url + ' ' +
                 count + ' times. Last visit at ' + time);
 
-            dataRef.on("value", function(snapshot) {
+            /*dataRef.on("value", function(snapshot) {
                 console.log(snapshot.val());
-                //console.log("child");
-                //console.log(snapshot.child(lastSite).valueOf());
 
                 if(snapshot.child(lastSite).exists()){ //method?
                     sitesRef.update(lastSite);
@@ -53,6 +48,7 @@ chrome.tabs.onActivated.addListener(function(info) {
             }, function (errorObject) {
                 console.log("The read failed: " + errorObject.code);
             });
+            */
 
             var urlRef = sitesRef.child(lastSite);
             console.log("time2: " + timeInt);
@@ -63,4 +59,3 @@ chrome.tabs.onActivated.addListener(function(info) {
     });
 
 });
-
