@@ -38,17 +38,6 @@ chrome.tabs.onActivated.addListener(function(info) {
                 tab.url + ' ' +
                 count + ' times. Last visit at ' + time);
 
-            /*dataRef.on("value", function(snapshot) {
-                console.log(snapshot.val());
-
-                if(snapshot.child(lastSite).exists()){ //method?
-                    sitesRef.update(lastSite);
-                }
-
-            }, function (errorObject) {
-                console.log("The read failed: " + errorObject.code);
-            });
-            */
 
             var urlRef = sitesRef.child(lastSite);
             console.log("time2: " + timeInt);
