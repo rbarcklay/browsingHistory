@@ -17,3 +17,5 @@ http://julip.co/2010/01/how-to-build-a-chrome-extension-part-4-background-pages-
 https://www.firebase.com/blog/2013-03-06-power-your-chrome-extension-with-firebase.html
 
 https://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/extensions/docs/examples/api/browserAction/
+
+moment.js
