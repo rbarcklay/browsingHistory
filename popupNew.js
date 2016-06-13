@@ -84,6 +84,10 @@ var main =function () {
 
         myChart = new Chart(ctx, {type: "pie", data: pieData});
 
+        for(i in l) {
+            $()
+        }
+
     }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);
     });
