@@ -4,6 +4,7 @@
 
 var dataRef = new Firebase('https://browsinghistory.firebaseio.com/');
 var data;
+var myChart;
 
 function sortData(arr) {
     arr.sort(function(a, b) {
@@ -35,12 +36,11 @@ var main =function () {
 
     var ctx= document.getElementById("chromeData").getContext("2d");
     var pieData = {};
-    var tempData = [];
+    //var tempData = [];
 
     dataRef.on("value", function (snapshot) {
-
+        var tempData = [];
         data = snapshot.val();
-        //var tempData = [];
 
         var siteD = data['websites'];
         for (i in siteD) {
@@ -51,7 +51,7 @@ var main =function () {
             }
 
             var label = i.split("_").join(".");
-            tempData.push({label: label, time: time});
+            tempData.push({label: label, time: Math.round(100*Math.round(time/(1000))/60)/100});
         }
 
         var l = tenSites(tempData);
@@ -78,8 +78,11 @@ var main =function () {
         }
 
         //console.log(pieData);
+        if (myChart != null) {
+            myChart.destroy();
+        }
 
-        new Chart(ctx, {type: "pie", data: pieData});
+        myChart = new Chart(ctx, {type: "pie", data: pieData});
 
     }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);

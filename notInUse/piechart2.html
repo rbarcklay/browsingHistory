@@ -4,17 +4,13 @@
     <meta charset="utf-8" />
 
     <title>Chart.js demo</title>
-
-    <script type = "text/javascript" src="firebase.js"></script>
-    <script type = "text/javascript" src="jquery.js"></script>
-    <script type = "text/javascript"  src="Chartmin.js"></script>
-    <script type = "text/javascript" src="popupNew.js"></script>
-    <link rel="stylesheet" type="text/css" href="mrm.css">
+    <script type = "text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script type = "text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+    <script type = "text/javascript" src="piechart.js"></script>
+    <link rel="stylesheet" href="../mrm.css"></link>
 
 </head>
 <body> <h1>Website Percentages </h1>
-<canvas id="chromeData" width="600" height="400"></canvas>
-
 <table>
     <th colspan="3">Data</th>
     <tr>
@@ -28,14 +24,14 @@
         <td> __ %</td>
     </tr>
     <tr>
-        <td id="numberTwoWebsite"> Second Website </td>
-        <td> 40% </td>
+    <td id="numberTwoWebsite"> Second Website </td>
+    <td> 40% </td>
     </tr>
     <tr>
         <td id="numberThreeWebsite"> Third Website</td>
     </tr>
     <tr><td id="numberFourWebsite">Fourth Website</td></tr>
 </table>
-
+<canvas id="countries" width="600" height="400"></canvas>
 </body>
 </html>

@@ -39,9 +39,11 @@ chrome.tabs.onActivated.addListener(function(info) {
                 count + ' times. Last visit at ' + time);
 
 
-            var urlRef = sitesRef.child(lastSite);
-            console.log("time2: " + timeInt);
-            urlRef.push(timeInt);
+            if (lastSite != "none") {
+                var urlRef = sitesRef.child(lastSite);
+                console.log("time2: " + timeInt);
+                urlRef.push(timeInt);
+            }
 
             lastSite = hName;
         });
