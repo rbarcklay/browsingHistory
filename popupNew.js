@@ -85,7 +85,8 @@ var main =function () {
         myChart = new Chart(ctx, {type: "pie", data: pieData});
 
         for(i in l) {
-            $()
+            var site = l[i];
+            $("#stats").append("<tr>" + site + "</tr>")
         }
 
     }, function (errorObject) {
